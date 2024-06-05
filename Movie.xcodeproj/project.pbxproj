@@ -11,6 +11,15 @@
 		D0C4651E2C108005006AA8F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C4651D2C108005006AA8F7 /* ContentView.swift */; };
 		D0C465202C108007006AA8F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C4651F2C108007006AA8F7 /* Assets.xcassets */; };
 		D0C465232C108007006AA8F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C465222C108007006AA8F7 /* Preview Assets.xcassets */; };
+		D0C4652A2C108537006AA8F7 /* MoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465292C108537006AA8F7 /* MoviePage.swift */; };
+		D0C4652C2C10855D006AA8F7 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C4652B2C10855D006AA8F7 /* HomePage.swift */; };
+		D0C465332C10863A006AA8F7 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465322C10863A006AA8F7 /* HomePageViewModel.swift */; };
+		D0C465362C10864D006AA8F7 /* MoviePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465352C10864D006AA8F7 /* MoviePageViewModel.swift */; };
+		D0C4653A2C108D84006AA8F7 /* CollectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465392C108D84006AA8F7 /* CollectionPage.swift */; };
+		D0C4653D2C108F73006AA8F7 /* SerialsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C4653C2C108F73006AA8F7 /* SerialsPage.swift */; };
+		D0C465402C108FA3006AA8F7 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C4653F2C108FA3006AA8F7 /* ProfilePage.swift */; };
+		D0C465442C109312006AA8F7 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D0C465432C109312006AA8F7 /* Networking */; };
+		D0C465472C10B57F006AA8F7 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465462C10B57F006AA8F7 /* MovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,14 @@
 		D0C4651D2C108005006AA8F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D0C4651F2C108007006AA8F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0C465222C108007006AA8F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0C465292C108537006AA8F7 /* MoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePage.swift; sourceTree = "<group>"; };
+		D0C4652B2C10855D006AA8F7 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		D0C465322C10863A006AA8F7 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		D0C465352C10864D006AA8F7 /* MoviePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageViewModel.swift; sourceTree = "<group>"; };
+		D0C465392C108D84006AA8F7 /* CollectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPage.swift; sourceTree = "<group>"; };
+		D0C4653C2C108F73006AA8F7 /* SerialsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialsPage.swift; sourceTree = "<group>"; };
+		D0C4653F2C108FA3006AA8F7 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		D0C465462C10B57F006AA8F7 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C465442C109312006AA8F7 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +69,11 @@
 		D0C4651A2C108005006AA8F7 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				D0C4651B2C108005006AA8F7 /* MovieApp.swift */,
+				D0C465452C10B572006AA8F7 /* Model */,
 				D0C4651D2C108005006AA8F7 /* ContentView.swift */,
-				D0C4651F2C108007006AA8F7 /* Assets.xcassets */,
+				D0C4652F2C108608006AA8F7 /* View */,
+				D0C4652E2C1085FA006AA8F7 /* Resources */,
+				D0C4652D2C1085EE006AA8F7 /* App */,
 				D0C465212C108007006AA8F7 /* Preview Content */,
 			);
 			path = Movie;
@@ -65,6 +85,84 @@
 				D0C465222C108007006AA8F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0C4652D2C1085EE006AA8F7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D0C4651B2C108005006AA8F7 /* MovieApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D0C4652E2C1085FA006AA8F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0C4651F2C108007006AA8F7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D0C4652F2C108608006AA8F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0C4653E2C108F80006AA8F7 /* ProfilePage */,
+				D0C465302C10860F006AA8F7 /* HomePage */,
+				D0C465312C108619006AA8F7 /* MoviePage */,
+				D0C465382C108D5F006AA8F7 /* CollectionPage */,
+				D0C465372C108D37006AA8F7 /* SerialsPage */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0C465302C10860F006AA8F7 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				D0C4652B2C10855D006AA8F7 /* HomePage.swift */,
+				D0C465322C10863A006AA8F7 /* HomePageViewModel.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		D0C465312C108619006AA8F7 /* MoviePage */ = {
+			isa = PBXGroup;
+			children = (
+				D0C465292C108537006AA8F7 /* MoviePage.swift */,
+				D0C465352C10864D006AA8F7 /* MoviePageViewModel.swift */,
+			);
+			path = MoviePage;
+			sourceTree = "<group>";
+		};
+		D0C465372C108D37006AA8F7 /* SerialsPage */ = {
+			isa = PBXGroup;
+			children = (
+				D0C4653C2C108F73006AA8F7 /* SerialsPage.swift */,
+			);
+			path = SerialsPage;
+			sourceTree = "<group>";
+		};
+		D0C465382C108D5F006AA8F7 /* CollectionPage */ = {
+			isa = PBXGroup;
+			children = (
+				D0C465392C108D84006AA8F7 /* CollectionPage.swift */,
+			);
+			path = CollectionPage;
+			sourceTree = "<group>";
+		};
+		D0C4653E2C108F80006AA8F7 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				D0C4653F2C108FA3006AA8F7 /* ProfilePage.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		D0C465452C10B572006AA8F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0C465462C10B57F006AA8F7 /* MovieModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +181,9 @@
 			dependencies = (
 			);
 			name = Movie;
+			packageProductDependencies = (
+				D0C465432C109312006AA8F7 /* Networking */,
+			);
 			productName = Movie;
 			productReference = D0C465182C108005006AA8F7 /* Movie.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +212,9 @@
 				Base,
 			);
 			mainGroup = D0C4650F2C108005006AA8F7;
+			packageReferences = (
+				D0C465422C109312006AA8F7 /* XCRemoteSwiftPackageReference "Networking" */,
+			);
 			productRefGroup = D0C465192C108005006AA8F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +241,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C465402C108FA3006AA8F7 /* ProfilePage.swift in Sources */,
 				D0C4651E2C108005006AA8F7 /* ContentView.swift in Sources */,
+				D0C465472C10B57F006AA8F7 /* MovieModel.swift in Sources */,
+				D0C4653A2C108D84006AA8F7 /* CollectionPage.swift in Sources */,
+				D0C465362C10864D006AA8F7 /* MoviePageViewModel.swift in Sources */,
 				D0C4651C2C108005006AA8F7 /* MovieApp.swift in Sources */,
+				D0C4653D2C108F73006AA8F7 /* SerialsPage.swift in Sources */,
+				D0C4652A2C108537006AA8F7 /* MoviePage.swift in Sources */,
+				D0C4652C2C10855D006AA8F7 /* HomePage.swift in Sources */,
+				D0C465332C10863A006AA8F7 /* HomePageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +456,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0C465422C109312006AA8F7 /* XCRemoteSwiftPackageReference "Networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devnoom/Networking.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0C465432C109312006AA8F7 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0C465422C109312006AA8F7 /* XCRemoteSwiftPackageReference "Networking" */;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0C465102C108005006AA8F7 /* Project object */;
 }
