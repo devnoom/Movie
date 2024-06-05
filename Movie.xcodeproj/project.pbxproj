@@ -20,6 +20,7 @@
 		D0C465402C108FA3006AA8F7 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C4653F2C108FA3006AA8F7 /* ProfilePage.swift */; };
 		D0C465442C109312006AA8F7 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D0C465432C109312006AA8F7 /* Networking */; };
 		D0C465472C10B57F006AA8F7 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465462C10B57F006AA8F7 /* MovieModel.swift */; };
+		D0C465492C110771006AA8F7 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C465482C110771006AA8F7 /* SearchResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D0C4653C2C108F73006AA8F7 /* SerialsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialsPage.swift; sourceTree = "<group>"; };
 		D0C4653F2C108FA3006AA8F7 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		D0C465462C10B57F006AA8F7 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		D0C465482C110771006AA8F7 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				D0C4652B2C10855D006AA8F7 /* HomePage.swift */,
 				D0C465322C10863A006AA8F7 /* HomePageViewModel.swift */,
+				D0C465482C110771006AA8F7 /* SearchResultsView.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				D0C465362C10864D006AA8F7 /* MoviePageViewModel.swift in Sources */,
 				D0C4651C2C108005006AA8F7 /* MovieApp.swift in Sources */,
 				D0C4653D2C108F73006AA8F7 /* SerialsPage.swift in Sources */,
+				D0C465492C110771006AA8F7 /* SearchResultsView.swift in Sources */,
 				D0C4652A2C108537006AA8F7 /* MoviePage.swift in Sources */,
 				D0C4652C2C10855D006AA8F7 /* HomePage.swift in Sources */,
 				D0C465332C10863A006AA8F7 /* HomePageViewModel.swift in Sources */,

@@ -16,7 +16,7 @@ class HomePageViewModel: ObservableObject {
         fetchMovies()
     }
     
-    private func fetchMovies() {
+    func fetchMovies() {
         guard let url = URL(string: apiURL) else {
             print("Invalid URL")
             return
@@ -37,13 +37,5 @@ class HomePageViewModel: ObservableObject {
     func posterURL(for movie: Movie) -> URL? {
         guard let posterPath = movie.posterPath else { return nil }
         return URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
-    }
-    
-    func filteredMovies(_ searchText: String) -> [Movie] {
-        if searchText.isEmpty {
-            return movies
-        } else {
-            return movies.filter { $0.title.lowercased().contains(searchText.lowercased()) }
-        }
     }
 }

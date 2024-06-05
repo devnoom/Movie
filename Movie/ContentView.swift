@@ -16,123 +16,136 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            Color.black.opacity(1)
             if showProfilePage {
                 ProfilePage(showProfilePage: $showProfilePage)
             } else {
-                ZStack {
-                    TabView(selection: $selectedTab) {
-                        HomePage(searchText: $searchText)
-                            .tabItem {
-                                Image(systemName: "house")
-                                Text("მთავარი")
-                            }
-                            .tag(0)
-                        MoviePage()
-                            .tabItem {
-                                Image(systemName: "movieclapper")
-                                Text("ფილმები")
-                            }
-                            .tag(1)
-                        Text("gia")
-                            .tabItem {
-                                Image(systemName: "tv")
-                                Text("სერიალები")
-                            }
-                            .tag(2)
-                        Text("leo")
-                            .tabItem {
-                                Image(systemName: "book")
-                                Text("კოლექცია")
-                            }
-                            .tag(3)
-                    }
-                    .background(Color.red)
-                    .accentColor(.red)
-                    
-                    VStack {
-                        HStack {
-                            if showSearchBar {
+                TabView(selection: $selectedTab) {
+                    HomePage(searchText: $searchText)
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("მთავარი")
+                        }
+                        .tag(0)
+                    MoviePage()
+                        .tabItem {
+                            Image(systemName: "movieclapper")
+                            Text("ფილმები")
+                        }
+                        .tag(1)
+                    Text("gia")
+                        .tabItem {
+                            Image(systemName: "tv")
+                            Text("სერიალები")
+                        }
+                        .tag(2)
+                    Text("leo")
+                        .tabItem {
+                            Image(systemName: "book")
+                            Text("კოლექცია")
+                        }
+                        .tag(3)
+                }
+                .accentColor(.red)
+                .backgroundStyle(Color.gray.opacity(0.00001))
+                .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    HStack {
+                        if showSearchBar {
+                            VStack {
+                                
                                 TextField("რას ეძებ?", text: $searchText)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .padding()
                                     .background(Color.white)
-                                    .foregroundColor(.red)
-                                    .transition(.move(edge: .top))
-                            } else {
-                                Image(systemName: "tv")
+                                    .cornerRadius(8)
                                     .padding()
-                                Spacer()
-                                HStack {
-                                    Button(action: {
-                                        withAnimation {
-                                            showSearchBar.toggle()
-                                            if !showSearchBar {
+                                    .foregroundColor(.black)
+                                    .transition(.move(edge: .bottom))
+                                    .onTapGesture {
+                                        
+                                        showSearchBar = true
+                                        
+                                    }
+                                ZStack {
+                                    
+                                    SearchResultsView(searchText: $searchText)
+                                    Spacer()
+                                    
+                                    //                                }
+                                        .frame(maxHeight: .infinity)
+                                    
+                                        .background(Color.gray.opacity(0.00001))
+                                        .edgesIgnoringSafeArea(.bottom)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                showSearchBar = false
                                                 searchText = ""
                                             }
                                         }
-                                    }) {
-                                        Image(systemName: "magnifyingglass")
-                                    }
-                                    Button(action: {
-                                        withAnimation {
-                                            showNotification.toggle()
-                                        }
-                                    }) {
-                                        Image(systemName: "bell")
-                                    }
-                                    Button(action: {
-                                        withAnimation {
-                                            showProfilePage = true
-                                        }
-                                    }) {
-                                        Image(systemName: "person.circle")
-                                    }
                                 }
+                            }
+                        }else {
+                            Image(systemName: "tv")
                                 .padding()
-                            }
-                        }
-                        .background(Color.black.opacity(0.9))
-                        .foregroundColor(.white)
-                        
-                        Spacer()
-                        
-                        if showNotification {
-                            VStack {
-                                Text("❤️")
-                                Text("Here no any notification")
-                            }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .padding()
-                            .transition(.move(edge: .top))
-                            .onTapGesture {
-                                withAnimation {
-                                    showNotification = false
+                            Spacer()
+                            HStack {
+                                Button(action: {
+                                    withAnimation {
+                                        showSearchBar.toggle()
+                                    }
+                                }) {
+                                    Image(systemName: "magnifyingglass")
+                                }
+                                Button(action: {
+                                    withAnimation {
+                                        showNotification.toggle()
+                                    }
+                                }) {
+                                    Image(systemName: "bell")
+                                }
+                                Button(action: {
+                                    withAnimation {
+                                        showProfilePage = true
+                                    }
+                                }) {
+                                    Image(systemName: "person.circle")
                                 }
                             }
+                            .padding()
                         }
                     }
+                    .background(Color.black.opacity(0.9))
+                    .foregroundColor(.white)
                     
-                    if showSearchBar {
-                        Color.black.opacity(0.5)
-                            .edgesIgnoringSafeArea(.all)
-                            .onTapGesture {
-                                withAnimation {
-                                    showSearchBar = false
-                                    searchText = ""
-                                }
-                            }
-                    }
-                }
-                .onTapGesture {
+                    Spacer()
+                    
                     if showNotification {
-                        withAnimation {
-                            showNotification = false
+                        VStack {
+                            Text("❤️")
+                            Text("Here no any notification")
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .padding()
+
+                        .onTapGesture {
+                            withAnimation {
+                                showNotification = false
+                            }
                         }
                     }
                 }
+                
+                //                var  customHeight = UIScreen().bounds.height - 20
+                //
+                //                if showSearchBar {
+                //
+                //
+                //                }
             }
         }
     }
