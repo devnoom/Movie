@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct MoviePage: View {
+    // MARK: - Body
     var body: some View {
         Text("აქ იქნება ყველა ფილმის სია")
     }
 }
 
-#Preview {
-    MoviePage()
-}

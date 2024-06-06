@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
     @State var selectedTab = 0
     @State private var showProfilePage = false
     @State private var showNotification = false
     @State private var showSearchBar = false
     @State private var searchText = ""
-    
+    // MARK: - Body
     var body: some View {
         ZStack {
-            Color.black.opacity(1)
+            Color.black.opacity(1).edgesIgnoringSafeArea(.all)
+            
             if showProfilePage {
                 ProfilePage(showProfilePage: $showProfilePage)
             } else {
@@ -33,13 +35,13 @@ struct ContentView: View {
                             Text("ფილმები")
                         }
                         .tag(1)
-                    Text("gia")
+                    CollectionPage()
                         .tabItem {
                             Image(systemName: "tv")
                             Text("სერიალები")
                         }
                         .tag(2)
-                    Text("leo")
+                    SerialsPage()
                         .tabItem {
                             Image(systemName: "book")
                             Text("კოლექცია")
@@ -47,7 +49,7 @@ struct ContentView: View {
                         .tag(3)
                 }
                 .accentColor(.red)
-                .backgroundStyle(Color.gray.opacity(0.00001))
+                .background(Color.black.opacity(0.01))
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack {
@@ -64,29 +66,24 @@ struct ContentView: View {
                                     .foregroundColor(.black)
                                     .transition(.move(edge: .bottom))
                                     .onTapGesture {
-                                        
                                         showSearchBar = true
-                                        
                                     }
+                                
                                 ZStack {
-                                    
                                     SearchResultsView(searchText: $searchText)
                                     Spacer()
-                                    
-                                    //                                }
-                                        .frame(maxHeight: .infinity)
-                                    
-                                        .background(Color.gray.opacity(0.00001))
-                                        .edgesIgnoringSafeArea(.bottom)
-                                        .onTapGesture {
-                                            withAnimation {
-                                                showSearchBar = false
-                                                searchText = ""
-                                            }
-                                        }
+                                }
+                                .frame(maxHeight: .infinity)
+                                .background(Color.gray.opacity(0.00001))
+                                .edgesIgnoringSafeArea(.bottom)
+                                .onTapGesture {
+                                    withAnimation {
+                                        showSearchBar = false
+                                        searchText = ""
+                                    }
                                 }
                             }
-                        }else {
+                        } else {
                             Image(systemName: "tv")
                                 .padding()
                             Spacer()
@@ -131,7 +128,6 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .shadow(radius: 5)
                         .padding()
-
                         .onTapGesture {
                             withAnimation {
                                 showNotification = false
@@ -139,20 +135,8 @@ struct ContentView: View {
                         }
                     }
                 }
-                
-                //                var  customHeight = UIScreen().bounds.height - 20
-                //
-                //                if showSearchBar {
-                //
-                //
-                //                }
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

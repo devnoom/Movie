@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct HomePage: View {
+    // MARK: - Properties
     @StateObject private var viewModel = HomePageViewModel()
     @Binding var searchText: String
-
+    // MARK: - Body
     var body: some View {
         NavigationView {
             ScrollView(.horizontal) {
@@ -50,7 +51,7 @@ struct HomePage: View {
                                 .lineLimit(2)
                                 .frame(maxWidth: 200, alignment: .leading)
                         }
-                      
+                        
                     }
                 }
                 .padding()
@@ -61,8 +62,3 @@ struct HomePage: View {
     }
 }
 
-struct HomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePage(searchText: .constant(""))
-    }
-}

@@ -9,13 +9,14 @@ import Foundation
 import Networking
 
 class HomePageViewModel: ObservableObject {
+    // MARK: - Properties
     @Published var movies: [Movie] = []
     private let apiURL = "https://api.themoviedb.org/3/movie/popular?api_key=7c83c4473e6ccc712af6dfc737739db1"
-    
+    // MARK: - Init
     init() {
         fetchMovies()
     }
-    
+    // MARK: - Fetch Movies
     func fetchMovies() {
         guard let url = URL(string: apiURL) else {
             print("Invalid URL")
@@ -33,7 +34,7 @@ class HomePageViewModel: ObservableObject {
             }
         }
     }
-    
+    // MARK: - Poster URL
     func posterURL(for movie: Movie) -> URL? {
         guard let posterPath = movie.posterPath else { return nil }
         return URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")

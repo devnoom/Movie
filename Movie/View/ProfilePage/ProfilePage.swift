@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ProfilePage: View {
+    // MARK: - Properties
     @Binding var showProfilePage: Bool
-    
+    // MARK: - Body
     var body: some View {
         VStack {
             HStack {

@@ -12,7 +12,7 @@ struct MovieResponse: Decodable {
     let results: [Movie]
     let totalPages: Int
     let totalResults: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case page
         case results
@@ -32,7 +32,7 @@ struct Movie: Decodable, Identifiable {
     let voteCount: Int
     let genreIDs: [Int]
     let popularity: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title

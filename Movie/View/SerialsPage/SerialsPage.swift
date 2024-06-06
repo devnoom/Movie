@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct SerialsPage: View {
+    // MARK: - Body
     var body: some View {
         Text("აქ იქნება სერიალები")
     }
 }
 
-#Preview {
-    SerialsPage()
-}

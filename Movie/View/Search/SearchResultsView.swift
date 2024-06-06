@@ -4,12 +4,14 @@
 //
 //  Created by MacBook Air on 06.06.24.
 //
+
 import SwiftUI
 
 struct SearchResultsView: View {
+    // MARK: - Properties
     @Binding var searchText: String
     @StateObject private var viewModel = HomePageViewModel()
-
+    // MARK: - Body
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 20) {
@@ -52,11 +54,5 @@ struct SearchResultsView: View {
             }
             .padding()
         }
-    }
-}
-
-struct SearchResultsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchResultsView(searchText: .constant(""))
     }
 }

@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct CollectionPage: View {
+    // MARK: - Body
     var body: some View {
         Text("აქ იქნება კოლექციები")
     }
 }
 
-#Preview {
-    CollectionPage()
-}
